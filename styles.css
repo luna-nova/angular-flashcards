@@ -1,6 +1,6 @@
 .card p {
   display: inline-block;
-  border: 2px solid red;
+  border: 4px outset red;
   height: 100px;
   width: 150px;
   text-align: center;
