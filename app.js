@@ -12,8 +12,15 @@ flashApp.controller("CardController", function($scope) {
       back: "backbone"
     }
   ];
+
   $scope.current = 0;
-  $scope.nextCard = function() {
-    $scope.current = ($scope.current+1) % ($scope.cards.length);
-  }
+  $scope.front = true;
+
+  $scope.next = function() {
+    var move = +(!$scope.front);
+    var numCards = $scope.cards.length;
+
+    $scope.current = ($scope.current + move) % numCards;
+    $scope.front = !$scope.front;
+  };
 });
