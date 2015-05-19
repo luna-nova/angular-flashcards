@@ -5,8 +5,8 @@ flashApp.controller("CardController", function($scope) {
     { front: "business",
       back: "party"
     },
-    { front: "vaginal",
-      back: "anal"
+    { front: "fannypack",
+      back: "pack"
     },
     { front: "frontlines",
       back: "backbone"
