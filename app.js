@@ -15,6 +15,10 @@ flashApp.controller("CardController", function($scope) {
 
   $scope.current = 0;
   $scope.front = true;
+  $scope.resetDeck = [];
+  for (var i = 0; i < $scope.cards.length; i++) {
+    $scope.resetDeck[i] = $scope.cards[i]
+  }
 
   $scope.next = function() {
     var move = +(!$scope.front);
@@ -35,4 +39,13 @@ flashApp.controller("CardController", function($scope) {
     $scope.cards.splice($scope.current, 1);
     $scope.current = $scope.current % $scope.cards.length;
   };
+
+  $scope.reset = function() {
+    for (var i = 0; i < $scope.resetDeck.length; i++) {
+      $scope.cards[i] = $scope.resetDeck[i]
+    }
+    $scope.current = 0;
+    $scope.front = true;
+  };
+
 });
