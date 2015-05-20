@@ -8,13 +8,14 @@
 </head>
 <body>
   <section ng-controller="CardController">
-    <div class="card">
+    <div ng-if="cards.length" class="card">
       <p ng-if="front" class="front">{{ cards[current].front }}</p>
       <p ng-if="!front" class="back">{{ cards[current].back }}</p>
-      {{ current }}
     </div>
-  <button class="buttono" ng-click="back()">back</button>
-  <button class="buttono" ng-click="next()">next</button>
+    <p ng-if="!cards.length">All gone!</p>
+  <button class="buttono" ng-click="back()">Back</button>
+  <button class="buttono" ng-click="next()">Next</button>
+  <button class="buttono" ng-click="iGotIt()">Got it!</button>
   </section>
   <script src="./app.js"></script>
 </body>

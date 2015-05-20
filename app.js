@@ -2,14 +2,14 @@ var flashApp = angular.module("flash", []);
 
 flashApp.controller("CardController", function($scope) {
   $scope.cards = [
-    { front: "1abigail",
-      back: "2anthony"
+    { front: "Your Face?",
+      back: "Beautiful."
     },
-    { front: "3barbara",
-      back: "4billy"
+    { front: "Height?",
+      back: "Just right."
     },
-    { front: "5cindy",
-      back: "6chas"
+    { front: "Life Goals?",
+      back: "Whatever you want!"
     }
   ];
 
@@ -28,5 +28,11 @@ flashApp.controller("CardController", function($scope) {
     var numCards = $scope.cards.length;
     $scope.current = (($scope.current || numCards) - move) % numCards;
     $scope.front = !$scope.front;
+  };
+
+  $scope.iGotIt = function() {
+    $scope.front = true;
+    $scope.cards.splice($scope.current, 1);
+    $scope.current = $scope.current % $scope.cards.length;
   };
 });
