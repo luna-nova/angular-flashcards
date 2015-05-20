@@ -11,3 +11,7 @@
 .card .back {
   border-color: blue;
 }
+
+.buttono button {
+  display: inline-block;
+}
