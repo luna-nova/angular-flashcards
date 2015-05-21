@@ -1,7 +1,7 @@
 var flashApp = angular.module("flash", []);
 
 flashApp.controller("CardController", function($scope) {
-  $scope.cards = [
+  var allCards = [
     { front: "Your Face?",
       back: "Beautiful."
     },
@@ -12,13 +12,6 @@ flashApp.controller("CardController", function($scope) {
       back: "Whatever you want!"
     }
   ];
-
-  $scope.current = 0;
-  $scope.front = true;
-  $scope.resetDeck = [];
-  for (var i = 0; i < $scope.cards.length; i++) {
-    $scope.resetDeck[i] = $scope.cards[i]
-  }
 
   $scope.next = function() {
     var move = +(!$scope.front);
@@ -41,11 +34,11 @@ flashApp.controller("CardController", function($scope) {
   };
 
   $scope.reset = function() {
-    for (var i = 0; i < $scope.resetDeck.length; i++) {
-      $scope.cards[i] = $scope.resetDeck[i]
-    }
+    $scope.cards = [].concat(allCards);
     $scope.current = 0;
     $scope.front = true;
   };
+
+  $scope.reset();
 
 });
