@@ -48,3 +48,5 @@ flashApp.controller("StudyController", function($scope) {
   $scope.reset();
 
 });
+
+flashApp.controller("CardController", function() {});
