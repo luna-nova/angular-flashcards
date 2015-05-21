@@ -12,9 +12,18 @@ flashApp.controller("DeckController", function ($scope) {
     }
   ];
 
-  $scope.copyDeck = function () {
-    return [].concat(allCards);
+  var studyDeck;
+
+  $scope.refreshStudyDeck = function () {
+    return studyDeck = [].concat(allCards);
   };
+
+  $scope.addCard = function (side1, side2) {
+    var newCard = { front: side1, back: side2 };
+    allCards.push(newCard);
+    studyDeck.push(newCard);
+  };
+
 });
 
 flashApp.controller("StudyController", function($scope) {
@@ -36,11 +45,11 @@ flashApp.controller("StudyController", function($scope) {
   $scope.iGotIt = function() {
     $scope.front = true;
     $scope.cards.splice($scope.current, 1);
-    $scope.current = $scope.current % $scope.cards.length;
+    $scope.current = ($scope.current % $scope.cards.length) || 0;
   };
 
   $scope.reset = function() {
-    $scope.cards = $scope.$parent.copyDeck();
+    $scope.cards = $scope.$parent.refreshStudyDeck();
     $scope.current = 0;
     $scope.front = true;
   };
@@ -49,4 +58,8 @@ flashApp.controller("StudyController", function($scope) {
 
 });
 
-flashApp.controller("CardController", function() {});
+flashApp.controller("CardController", function($scope) {
+  $scope.addCard = function () {
+    $scope.$parent.addCard($scope.front, $scope.back);
+  };
+});
