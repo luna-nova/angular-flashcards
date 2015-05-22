@@ -61,5 +61,7 @@ flashApp.controller("StudyController", function($scope) {
 flashApp.controller("CardController", function($scope) {
   $scope.addCard = function () {
     $scope.$parent.addCard($scope.front, $scope.back);
+    $scope.front = "";
+    $scope.back = "";
   };
 });
