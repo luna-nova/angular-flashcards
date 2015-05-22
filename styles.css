@@ -8,11 +8,11 @@
   line-height: 100px;
   box-shadow: 5px 5px 2px #888888;
   border-radius: 10px;
-  background-image: url("http://designlovr.com/examples/dynamic_stack_of_index_cards/images/card_bg.jpg");
 }
 
 .card .back {
   border-color: blue;
+  background-image: url("http://designlovr.com/examples/dynamic_stack_of_index_cards/images/card_bg.jpg");
 }
 
 h6 {
@@ -26,24 +26,18 @@ button {
   display: inline-block;
 }
 
-.add-card-section p {
-  font-family: serif;
-}
-
 textarea {
   resize: none;
   border-radius: 10px;
   box-shadow: 3px 3px 1px #888888;
+  background-size: contain;
 }
 
 textarea#frontadd {
   border: 2px solid red;
-  background-image: url("http://designlovr.com/examples/dynamic_stack_of_index_cards/images/card_bg.jpg");
-  background-size: contain;
 }
 
 textarea#backadd {
   border: 2px solid blue;
   background-image: url("http://designlovr.com/examples/dynamic_stack_of_index_cards/images/card_bg.jpg");
-  background-size: contain;
 }

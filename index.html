@@ -14,13 +14,13 @@
       <p ng-if="!front" class="back">{{ cards[current].back }}</p>
     </div>
     <p ng-if="!cards.length">All gone!</p>
-  <button class="buttono" ng-click="back()" ng-disabled="!cards.length">Back</button>
-  <button class="buttono" ng-click="next()" ng-disabled="!cards.length">Next</button>
-  <button class="buttono" ng-click="iGotIt()" ng-disabled="!cards.length">Got it!</button>
-  <button class="buttono" ng-click="reset()">Reset</button>
+  <button ng-click="back()" ng-disabled="!cards.length">Back</button>
+  <button ng-click="next()" ng-disabled="!cards.length">Next</button>
+  <button ng-click="iGotIt()" ng-disabled="!cards.length">Got it!</button>
+  <button ng-click="reset()">Reset</button>
   </section>
   <hr>
-  <section ng-controller="CardController" class="add-card-section">
+  <section ng-controller="CardController">
     <p>-Front-</p>
     <label for="front"></label>
     <textarea id="frontadd" name="front" rows="4" cols="20" ng-model="front" placeholder="Front Text Here"></textarea>
@@ -28,7 +28,7 @@
     <label for="back"></label>
     <textarea id="backadd" name="back" rows="4" cols="20" ng-model="back" placeholder="Back Text Here"></textarea>
     <div>
-      <button type="button" class="buttono" ng-click="addCard()">Add Card</button>
+      <button ng-click="addCard()">Add Card</button>
     </div>
   </section>
   <script src="./app.js"></script>
