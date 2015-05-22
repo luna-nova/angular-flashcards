@@ -9,6 +9,7 @@
 <body ng-controller="DeckController">
   <section ng-controller="StudyController">
     <div ng-if="cards.length" class="card">
+      <h6>{{ current + 1 + "." }}</h6>
       <p ng-if="front" class="front">{{ cards[current].front }}</p>
       <p ng-if="!front" class="back">{{ cards[current].back }}</p>
     </div>
@@ -18,11 +19,14 @@
   <button class="buttono" ng-click="iGotIt()" ng-disabled="!cards.length">Got it!</button>
   <button class="buttono" ng-click="reset()">Reset</button>
   </section>
-  <section ng-controller="CardController">
-    <label for="front">Front</label>
-    <textarea name="front" rows="4" cols="20" ng-model="front"></textarea>
-    <label for="back">Back</label>
-    <textarea name="back" rows="4" cols="20" ng-model="back"></textarea>
+  <hr>
+  <section ng-controller="CardController" class="add-card-section">
+    <p>-Front-</p>
+    <label for="front"></label>
+    <textarea id="frontadd" name="front" rows="4" cols="20" ng-model="front" placeholder="Front Text Here"></textarea>
+    <p>-Back-</p>
+    <label for="back"></label>
+    <textarea id="backadd" name="back" rows="4" cols="20" ng-model="back" placeholder="Back Text Here"></textarea>
     <div>
       <button type="button" class="buttono" ng-click="addCard()">Add Card</button>
     </div>

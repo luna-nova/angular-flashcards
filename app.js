@@ -21,7 +21,7 @@ flashApp.controller("DeckController", function ($scope) {
   $scope.addCard = function (side1, side2) {
     var newCard = { front: side1, back: side2 };
     allCards.push(newCard);
-    studyDeck.push(newCard);
+    studyDeck && studyDeck.push(newCard);
   };
 
 });
