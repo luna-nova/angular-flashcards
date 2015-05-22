@@ -1,6 +1,5 @@
 var flashApp = angular.module("flash", []);
-
-flashApp.controller("CardController", function($scope) {
+flashApp.controller("DeckController", function ($scope) {
   var allCards = [
     { front: "Your Face?",
       back: "Beautiful."
@@ -12,6 +11,22 @@ flashApp.controller("CardController", function($scope) {
       back: "Whatever you want!"
     }
   ];
+
+  var studyDeck;
+
+  $scope.refreshStudyDeck = function () {
+    return studyDeck = [].concat(allCards);
+  };
+
+  $scope.addCard = function (side1, side2) {
+    var newCard = { front: side1, back: side2 };
+    allCards.push(newCard);
+    studyDeck && studyDeck.push(newCard);
+  };
+
+});
+
+flashApp.controller("StudyController", function($scope) {
 
   $scope.next = function() {
     var move = +(!$scope.front);
@@ -30,15 +45,23 @@ flashApp.controller("CardController", function($scope) {
   $scope.iGotIt = function() {
     $scope.front = true;
     $scope.cards.splice($scope.current, 1);
-    $scope.current = $scope.current % $scope.cards.length;
+    $scope.current = ($scope.current % $scope.cards.length) || 0;
   };
 
   $scope.reset = function() {
-    $scope.cards = [].concat(allCards);
+    $scope.cards = $scope.$parent.refreshStudyDeck();
     $scope.current = 0;
     $scope.front = true;
   };
 
   $scope.reset();
 
+});
+
+flashApp.controller("CardController", function($scope) {
+  $scope.addCard = function () {
+    $scope.$parent.addCard($scope.front, $scope.back);
+    $scope.front = "";
+    $scope.back = "";
+  };
 });

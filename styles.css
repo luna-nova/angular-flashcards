@@ -12,8 +12,32 @@
 
 .card .back {
   border-color: blue;
+  background-image: url("http://designlovr.com/examples/dynamic_stack_of_index_cards/images/card_bg.jpg");
 }
 
-.buttono button {
+h6 {
+  display: inline;
+  float: left;
+  left: 15px;
+  position: relative;
+}
+
+button {
   display: inline-block;
+}
+
+textarea {
+  resize: none;
+  border-radius: 10px;
+  box-shadow: 3px 3px 1px #888888;
+  background-size: contain;
+}
+
+textarea#frontadd {
+  border: 2px solid red;
+}
+
+textarea#backadd {
+  border: 2px solid blue;
+  background-image: url("http://designlovr.com/examples/dynamic_stack_of_index_cards/images/card_bg.jpg");
 }
