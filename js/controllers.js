@@ -1,5 +1,6 @@
-var flashApp = angular.module("flash", []);
-flashApp.controller("DeckController", function ($scope) {
+var ctrlModule = angular.module("flash.controllers", []);
+
+ctrlModule.controller("DeckController", function ($scope) {
   var allCards = [
     { front: "Your Face?",
       back: "Beautiful."
@@ -26,7 +27,7 @@ flashApp.controller("DeckController", function ($scope) {
 
 });
 
-flashApp.controller("StudyController", function($scope) {
+ctrlModule.controller("StudyController", function($scope) {
 
   $scope.next = function() {
     var move = +(!$scope.front);
@@ -58,7 +59,7 @@ flashApp.controller("StudyController", function($scope) {
 
 });
 
-flashApp.controller("CardController", function($scope) {
+ctrlModule.controller("CardController", function($scope) {
   $scope.addCard = function () {
     $scope.$parent.addCard($scope.front, $scope.back);
     $scope.front = "";
