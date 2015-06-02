@@ -6,8 +6,10 @@
   text-align: center;
   vertical-align: middle;
   line-height: 100px;
+  min-height: 20%;
   box-shadow: 5px 5px 2px #888888;
   border-radius: 10px;
+  background-color: white;
 }
 
 .card .back {
@@ -15,10 +17,25 @@
   background-image: url("http://designlovr.com/examples/dynamic_stack_of_index_cards/images/card_bg.jpg");
 }
 
+hr {
+  width: 50%;
+}
+
+h1 {
+  background-color: #282E22;
+  border-radius: 6px;
+  padding: 1%;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  font-family: sans-serif;
+  box-shadow: 5px 5px 2px #888888;
+}
+
 h6 {
   display: inline;
-  float: left;
-  left: 15px;
+  left: 22px;
+  bottom: 36px;
   position: relative;
 }
 
@@ -34,10 +51,24 @@ textarea {
 }
 
 textarea#frontadd {
-  border: 2px solid red;
+  border: 3px solid red;
 }
 
 textarea#backadd {
-  border: 2px solid blue;
+  border: 3px solid blue;
   background-image: url("http://designlovr.com/examples/dynamic_stack_of_index_cards/images/card_bg.jpg");
+}
+
+#background {
+  background-image: url("http://wallrere.com/wp-content/uploads/2015/05/white-background-wallpaper-1293289.jpg");
+}
+
+#mainwrapper {
+  width: 50%;
+  background-color: white;
+  min-height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding-bottom: 4%;
 }

@@ -6,31 +6,35 @@
   <script src="./lib/angular.min.js"></script>
   <title>Document</title>
 </head>
-<body ng-controller="DeckController">
-  <section ng-controller="StudyController">
-    <div ng-if="cards.length" class="card">
-      <h6>{{ current + 1 + "." }}</h6>
-      <p ng-if="front" class="front">{{ cards[current].front }}</p>
-      <p ng-if="!front" class="back">{{ cards[current].back }}</p>
-    </div>
-    <p ng-if="!cards.length">All gone!</p>
-  <button ng-click="back()" ng-disabled="!cards.length">Back</button>
-  <button ng-click="next()" ng-disabled="!cards.length">Next</button>
-  <button ng-click="iGotIt()" ng-disabled="!cards.length">Got it!</button>
-  <button ng-click="reset()">Reset</button>
-  </section>
-  <hr>
-  <section ng-controller="CardController">
-    <p>-Front-</p>
-    <label for="front"></label>
-    <textarea id="frontadd" name="front" rows="4" cols="20" ng-model="front" placeholder="Front Text Here"></textarea>
-    <p>-Back-</p>
-    <label for="back"></label>
-    <textarea id="backadd" name="back" rows="4" cols="20" ng-model="back" placeholder="Back Text Here"></textarea>
-    <div>
-      <button ng-click="addCard()">Add Card</button>
-    </div>
-  </section>
+<body ng-controller="DeckController" id="background">
+  <div id="mainwrapper">
+    <section ng-controller="StudyController">
+      <h1>Get your study on!</h1>
+      <div ng-if="cards.length" class="card">
+        <h6>{{ current + 1 + "." }}</h6>
+        <p ng-if="front" class="front">{{ cards[current].front }}</p>
+        <p ng-if="!front" class="back">{{ cards[current].back }}</p>
+      </div>
+      <p ng-if="!cards.length">All gone!</p>
+    <button ng-click="back()" ng-disabled="!cards.length">Back</button>
+    <button ng-click="next()" ng-disabled="!cards.length">Next</button>
+    <button ng-click="iGotIt()" ng-disabled="!cards.length">Got it!</button>
+    <button ng-click="reset()">Reset</button>
+    </section>
+    <hr>
+    <section ng-controller="CardController">
+      <h1>Add your own cards!</h1>
+      <p>-Front-</p>
+      <label for="front"></label>
+      <textarea id="frontadd" name="front" rows="4" cols="20" ng-model="front" placeholder="Front Text Here"></textarea>
+      <p>-Back-</p>
+      <label for="back"></label>
+      <textarea id="backadd" name="back" rows="4" cols="20" ng-model="back" placeholder="Back Text Here"></textarea>
+      <div>
+        <button ng-click="addCard()">Add Card</button>
+      </div>
+    </section>
+  </div>
   <script src="./js/app.js"></script>
   <script src="./js/controllers.js"></script>
   <script src="./js/cardctrl.js"></script>
