@@ -16,9 +16,10 @@
   border-color: blue;
   background-image: url("http://designlovr.com/examples/dynamic_stack_of_index_cards/images/card_bg.jpg");
 }
+/*===============HEADERS=================*/
 
 hr {
-  width: 50%;
+  width: 60%;
 }
 
 h1 {
@@ -38,10 +39,13 @@ h6 {
   bottom: 36px;
   position: relative;
 }
+/*===============BUTTONS==================*/
 
 button {
   display: inline-block;
 }
+
+/*===============TEXTAREA==================*/
 
 textarea {
   resize: none;
@@ -59,6 +63,8 @@ textarea#backadd {
   background-image: url("http://designlovr.com/examples/dynamic_stack_of_index_cards/images/card_bg.jpg");
 }
 
+/*===============IDS==================*/
+
 #background {
   background-image: url("http://wallrere.com/wp-content/uploads/2015/05/white-background-wallpaper-1293289.jpg");
 }
@@ -71,4 +77,18 @@ textarea#backadd {
   margin-right: auto;
   text-align: center;
   padding-bottom: 4%;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.2em;
+    width: 45%;
+  }
+  hr {
+    width: 80%
+  }
+  #mainwrapper {
+    width: 65%;
+    padding-bottom: 12%;
+  }
 }
