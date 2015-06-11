@@ -1,4 +1,4 @@
-.card p {
+.card {
   display: inline-block;
   border: 4px outset red;
   height: 100px;
@@ -12,9 +12,24 @@
   background-color: white;
 }
 
+.deck-card {
+  vertical-align: top;
+  display: inline-block;
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+.deck-card a {
+  text-decoration: none;
+}
 .card .back {
   border-color: blue;
   background-image: url("http://designlovr.com/examples/dynamic_stack_of_index_cards/images/card_bg.jpg");
+}
+
+.no-dots {
+  list-style-type: none;
+  padding-left: 0;
 }
 /*===============HEADERS=================*/
 
