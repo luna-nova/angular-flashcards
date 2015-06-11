@@ -30,13 +30,11 @@ deckModule.controller("DeckController", function ($scope) {
     }
   ];
 
-  var allCards = allDecks[0].cards;
   var studyDeck;
-
   $scope.decks = allDecks;
 
-  $scope.refreshStudyDeck = function () {
-    return studyDeck = [].concat(allCards);
+  $scope.refreshStudyDeck = function (deckNumber) {
+    return studyDeck = [].concat(allDecks[deckNumber].cards);
   };
 
   $scope.addCard = function (side1, side2) {

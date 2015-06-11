@@ -1,15 +1,15 @@
 .card {
-  display: inline-block;
   border: 4px outset red;
   height: 100px;
   width: 150px;
   text-align: center;
   vertical-align: middle;
-  line-height: 100px;
-  min-height: 20%;
   box-shadow: 5px 5px 2px #888888;
   border-radius: 10px;
   background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3%;
 }
 
 .deck-card {
@@ -50,8 +50,6 @@ h1 {
 
 h6 {
   display: inline;
-  left: 22px;
-  bottom: 36px;
   position: relative;
 }
 /*===============BUTTONS==================*/

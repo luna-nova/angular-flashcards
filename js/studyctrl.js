@@ -2,6 +2,8 @@ var studyModule = angular.module("flash.study", ["ngRoute"]);
 
 studyModule.controller("StudyController", ["$scope", "$routeParams", function($scope, $routeParams) {
 
+  $scope.indexNumber = $routeParams.index;
+  
   $scope.next = function() {
     var move = +(!$scope.front);
     var numCards = $scope.cards.length;
@@ -23,7 +25,7 @@ studyModule.controller("StudyController", ["$scope", "$routeParams", function($s
   };
 
   $scope.reset = function() {
-    $scope.cards = $scope.decks[$routeParams.index].cards;
+    $scope.cards = $scope.$parent.refreshStudyDeck($routeParams.index);
     $scope.current = 0;
     $scope.front = true;
   };
