@@ -1,4 +1,4 @@
-var cardModule = angular.module("flash.card", []);
+var cardModule = angular.module("flash.card", ["ngRoute"]);
 
 cardModule.controller("CardController", ["$scope", "$routeParams", function($scope, $routeParams) {
   $scope.addCard = function () {

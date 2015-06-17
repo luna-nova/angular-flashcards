@@ -3,7 +3,7 @@ var studyModule = angular.module("flash.study", ["ngRoute"]);
 studyModule.controller("StudyController", ["$scope", "$routeParams", function($scope, $routeParams) {
 
   $scope.indexNumber = $routeParams.index;
-  
+
   $scope.next = function() {
     var move = +(!$scope.front);
     var numCards = $scope.cards.length;
