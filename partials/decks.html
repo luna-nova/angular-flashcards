@@ -1,0 +1,9 @@
+
+  <section>
+    <h1>Choose your deck!</h1>
+    <ul class="no-dots">
+      <li class="card deck-card" ng-repeat="deck in decks">
+        <a ng-href="#/study/{{$index}}"><p>{{ deck.name }}</p></a>
+      </li>
+    </ul>
+  </section>

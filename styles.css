@@ -1,20 +1,35 @@
-.card p {
-  display: inline-block;
+.card {
   border: 4px outset red;
   height: 100px;
   width: 150px;
   text-align: center;
   vertical-align: middle;
-  line-height: 100px;
-  min-height: 20%;
   box-shadow: 5px 5px 2px #888888;
   border-radius: 10px;
   background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3%;
 }
 
+.deck-card {
+  vertical-align: top;
+  display: inline-block;
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+.deck-card a {
+  text-decoration: none;
+}
 .card .back {
   border-color: blue;
   background-image: url("http://designlovr.com/examples/dynamic_stack_of_index_cards/images/card_bg.jpg");
+}
+
+.no-dots {
+  list-style-type: none;
+  padding-left: 0;
 }
 /*===============HEADERS=================*/
 
@@ -35,8 +50,6 @@ h1 {
 
 h6 {
   display: inline;
-  left: 22px;
-  bottom: 36px;
   position: relative;
 }
 /*===============BUTTONS==================*/
